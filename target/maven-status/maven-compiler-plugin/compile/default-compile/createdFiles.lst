@@ -1,0 +1,10 @@
+dao\IBookDAO.class
+dao\impl\AbstractDAO.class
+model\BookModel.class
+utils\ConnectDB.class
+model\AbstractModel.class
+dao\IGenericDAO.class
+mapper\BookMapper.class
+mapper\RowMapper.class
+dao\impl\BookDAO.class
+com\mycompany\mana_book\Mana_Book.class
