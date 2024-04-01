@@ -4,33 +4,35 @@
  */
 package model;
 
-import java.util.ArrayList;
 
 /**
  *
  * @author ThuanBui
  */
 public class BookModel extends AbstractModel{
-    private String title, slug, description, imageThumbnail;
-
-    private ArrayList<CategoryModel> categories;
-    private float rate;
-    private AuthorModel author;
-    private int liked, quantity;
+    private String title, slug, description, imageThumbnail, nameAuthor, created, updated;
+    private Integer idAuthor, quantity;
 
     public BookModel() {
     }
 
-    public BookModel(String title, String slug, String description, String imageThumbnail, float rate, AuthorModel author, int liked, int quantity) {
+    public BookModel(String title, String slug, String description, String imageThumbnail, Integer idAuthor, String nameAuthor, Integer quantity) {
         this.title = title;
         this.slug = slug;
         this.description = description;
         this.imageThumbnail = imageThumbnail;
-        this.rate = rate;
-        this.author = author;
-        this.liked = liked;
+        this.nameAuthor = nameAuthor;
+        this.quantity = quantity;
+        this.idAuthor = idAuthor;
+    }
+
+    public BookModel(String title, Integer idAuthor, Integer quantity) {
+        this.title = title;
+        this.idAuthor = idAuthor;
         this.quantity = quantity;
     }
+
+    
 
     public String getTitle() {
         return title;
@@ -38,6 +40,14 @@ public class BookModel extends AbstractModel{
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 
     public String getDescription() {
@@ -56,59 +66,50 @@ public class BookModel extends AbstractModel{
         this.imageThumbnail = imageThumbnail;
     }
 
-//    public String getCategories() {
-//        return categories;
-//    }
-
-//    public void setCategories(String categories) {
-//        this.categories = categories;
-//    }
-
-    public float getRate() {
-        return rate;
+    public String getNameAuthor() {
+        return nameAuthor;
     }
 
-    public void setRate(float rate) {
-        this.rate = rate;
+    public void setNameAuthor(String nameAuthor) {
+        this.nameAuthor = nameAuthor;
     }
 
-    public String getSlug() {
-        return slug;
+    public Integer getIdAuthor() {
+        return idAuthor;
     }
 
-    public void setSlug(String slug) {
-        this.slug = slug;
+    public void setIdAuthor(Integer idAuthor) {
+        this.idAuthor = idAuthor;
     }
 
-    public int getLiked() {
-        return liked;
-    }
-
-    public void setLiked(int liked) {
-        this.liked = liked;
-    }
-
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public AuthorModel getAuthors() {
-        return author;
+    public String getCreated() {
+        return created;
     }
 
-    public void setAuthors(AuthorModel listAuthors) {
-        this.author = listAuthors;
+    public void setCreated(String created) {
+        this.created = created;
     }
 
-    public ArrayList<CategoryModel> getCategories() {
-        return categories;
+    public String getUpdated() {
+        return updated;
     }
 
-    public void setCategories(ArrayList<CategoryModel> categories) {
-        this.categories = categories;
+    public void setUpdated(String updated) {
+        this.updated = updated;
     }
+
+    @Override
+    public String toString() {
+        return "BookModel{" + "title=" + title + ", slug=" + slug + ", description=" + description + ", imageThumbnail=" + imageThumbnail + ", nameAuthor=" + nameAuthor + ", created=" + created + ", updated=" + updated + ", idAuthor=" + idAuthor + ", quantity=" + quantity + '}';
+    }
+    
+    
 }

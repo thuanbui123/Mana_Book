@@ -19,7 +19,7 @@ public interface IBookDAO extends IGenericDAO<BookModel> {
 
     Long addBook(BookModel bookModel);
 
-    void updateBook(BookModel bookModel, String id);
+    void updateBook(BookModel bookModel,Integer id);
 
-    void deleteBook(String slug);
+    void deleteBook(Integer idBook);
 }

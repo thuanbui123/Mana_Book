@@ -37,8 +37,8 @@ public class AbstractDAO<T> implements IGenericDAO<T>{
                 results.add(rowMapper.mapRow(resultSet));
             }
             return results;
-        } catch (Exception ex) {
-
+        } catch (ClassNotFoundException | SQLException ex) {
+            ex.printStackTrace();
             return null;
         } finally {
             try {
